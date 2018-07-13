@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="MVVM Fragment"
+    minApi="9"
+    minBuildApi="14"
+    description="Creates a new mvvm fragment">
+
+    <category value="AAMVVM" />
+    <formfactor value="Mobile" />
+
+    
+
+    <parameter
+        id="shortName"
+        name="Short Name"
+        type="string"
+        constraints="unique|nonempty"
+        suggest="Main"
+        default="Main"
+        help="请填写页面名,如填写 Main,会自动生成 MainFrament, MainViewModel 等文件(首字母请大写)" />
+
+    <parameter
+        id="fragmentClass"
+        name="Fragment Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${shortName}Fragment"
+        default="MainActivity"
+        help="The name of the fragment class to create" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${camelCaseToUnderscore(shortName)}_fragment"
+        default="main_fragment"
+        help="The name of the layout to create for the fragment" />
+
+    <parameter
+        id="generateViewModel"
+        name="need Generate viewmodel File"
+        type="boolean"
+        default="true" 
+        help="如果不勾选，不会生成viewmodel" />
+
+    <parameter
+        id="viewmodelName"
+        name="ViewModel Name"
+        type="string"
+        constraints="unique|nonempty"
+        suggest="${shortName}ViewModel"
+        visiblity="generateViewModel"
+        default="MainViewModel"
+        help="The name of the viewmodel class to create" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
