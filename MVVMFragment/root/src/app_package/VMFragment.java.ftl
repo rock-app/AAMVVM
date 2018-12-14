@@ -4,14 +4,8 @@ import ${superClassFqcn};
 
 <#if generateViewModel>
 import ${packageName}.viewmodel.${shortName}ViewModel;
-import javax.inject.Inject;
 </#if>  
 
-<#if applicationPackage??>
-import ${applicationPackage}.R;
-import ${applicationPackage}.databinding.${fragmentClass}Binding;
-import ${applicationPackage}.view.base.BaseFragment;
-</#if>
 
 /**
  * description: ${fragmentClass}
@@ -23,8 +17,7 @@ import ${applicationPackage}.view.base.BaseFragment;
 public class ${fragmentClass} extends BaseFragment<${fragmentClass}Binding>{
 
     <#if generateViewModel>
-    @Inject
-    public ${shortName}ViewModel  mViewModel;
+    private ${shortName}ViewModel  mViewModel;
     </#if>  
 
     @Override
@@ -35,7 +28,7 @@ public class ${fragmentClass} extends BaseFragment<${fragmentClass}Binding>{
     @Override 
     public void initView() {
          <#if generateViewModel>
-        getComponent().inject(this);
+        mViewModel = getInjectViewModel<${shortName}ViewModel>();
         mBinding.setVm(mViewModel);
         </#if>
     }

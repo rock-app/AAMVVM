@@ -9,6 +9,6 @@ package ${packageName}.viewmodel;
  * @date ${.now?string("yyyy/MM/dd")}
  */
 
-class ${viewmodelName}{
+class ${viewmodelName} : BaseViewModel(){
     
 }

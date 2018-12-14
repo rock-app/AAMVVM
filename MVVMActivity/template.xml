@@ -10,8 +10,6 @@
     <category value="AAMVVM" />
     <formfactor value="Mobile" />
 
-    
-
     <parameter
         id="shortName"
         name="Short Name"
@@ -62,6 +60,26 @@
         type="string"
         constraints="package"
         default="com.mycompany.myapp" />
+
+
+    <parameter
+        id="moduleName"
+        name="Module Name"
+        type="string"
+        suggest="app"
+        default="app"
+        help="自动生成到哪一个模块" />
+
+    <parameter
+        id="customSrcDir"
+        name="Custom SrcDir"
+        type="string"
+        suggest="src.main.java"
+        constraints="package"
+        default="src.main.java"
+        help="目录，默认到src/main/java" />
+
+
 
     <!-- 128x128 thumbnails relative to template.xml -->
     <thumbs>

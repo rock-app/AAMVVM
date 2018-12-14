@@ -3,13 +3,8 @@ package ${packageName};
 import ${superClassFqcn};
 <#if generateViewModel>
 import ${packageName}.viewmodel.${shortName}ViewModel;
-import javax.inject.Inject;
 </#if>  
-<#if applicationPackage??>
-import ${applicationPackage}.R;
-import ${applicationPackage}.databinding.${activityClass}Binding;
-import ${applicationPackage}.view.base.BaseActivity;
-</#if>
+
 
 /**
  * description: ${activityClass}
@@ -23,9 +18,9 @@ import ${applicationPackage}.view.base.BaseActivity;
 public class ${activityClass} extends BaseActivity<${activityClass}Binding>{
 
     <#if generateViewModel>
-    @Inject
-    public ${shortName}ViewModel  mViewModel;
-    </#if>  
+    private ${shortName}ViewModel  mViewModel;
+    </#if> 
+
 
     @Override 
     public int getLayoutId() {
@@ -34,12 +29,14 @@ public class ${activityClass} extends BaseActivity<${activityClass}Binding>{
 
     @Override 
     public void initView() {
-         <#if generateViewModel>
-        getComponent().inject(this);
+        <#if generateViewModel>
+        mViewModel = getInjectViewModel<${shortName}ViewModel>();
         mBinding.setVm(mViewModel);
         </#if>
     }
 
+    @Override
+    public void loadData(boolean isRefresh){}
 
 }
 

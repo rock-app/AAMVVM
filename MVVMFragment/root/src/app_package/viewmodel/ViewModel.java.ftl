@@ -8,6 +8,6 @@ package ${packageName}.viewmodel;
  *
  * @date ${.now?string("yyyy/MM/dd")}
  */
-public class ${viewmodelName}  {
+public class ${viewmodelName} extends BaseViewModel{
     
 }

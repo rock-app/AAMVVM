@@ -7,11 +7,11 @@
 
     <#if generateViewModel>  
     <instantiate from="root/src/app_package/viewmodel/ViewModel.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/viewmodel/${shortName}ViewModel.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(customSrcOut)}/viewmodel/${shortName}ViewModel.${ktOrJavaExt}" />
     </#if>
     
     <instantiate from="root/src/app_package/VMFragment.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/${fragmentClass}.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(customSrcOut)}/${fragmentClass}.${ktOrJavaExt}" />
 
-    <open file="${escapeXmlAttribute(srcOut)}/${fragmentClass}.${ktOrJavaExt}" />
+    <open file="${escapeXmlAttribute(customSrcOut)}/${fragmentClass}.${ktOrJavaExt}" />
 </recipe>
