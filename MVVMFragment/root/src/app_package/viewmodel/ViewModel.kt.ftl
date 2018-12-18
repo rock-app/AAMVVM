@@ -1,6 +1,6 @@
 
 package ${packageName}.viewmodel;
-
+import javax.inject.Inject
 /**
  * description: ${viewmodelName}
  *
@@ -8,6 +8,6 @@ package ${packageName}.viewmodel;
  *
  * @date ${.now?string("yyyy/MM/dd")}
  */
-class ${viewmodelName} : BaseViewModel(){
+class ${viewmodelName} @Inject constructor(): BaseViewModel(){
     
 }
