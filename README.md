@@ -10,7 +10,7 @@
 
 ### 示例
 
-![sample](/Applications/Android%20Studio.app/Contents/plugins/android/lib/templates/AAMVVM/sample.png)
+![sample](sample.png)
 
 gif 示例：https://giphy.com/gifs/jWlRYRVpxNjTHysYBm/fullscreen
 
@@ -39,7 +39,7 @@ git clone https://github.com/HeadingMobile/AAMVVM.git
 
 在对应的目录下右击，选择所需的MVVM模板，提供Java 和 Kotlin版本。
 
-注意：依赖注入默认使用Koin，基类请参考[PaoNet](https://github.com/ditclear/PaoNet)示例代码。
+> 注意：依赖注入默认使用Koin，基类请参考[PaoNet](https://github.com/ditclear/PaoNet)示例代码。
 
 ### 字段说明
 
@@ -52,7 +52,7 @@ git clone https://github.com/HeadingMobile/AAMVVM.git
 | Package name      | 该页面的packageName                                          |
 | Module Name       | 默认为app，如果不是位于app模块，请填写名称                   |
 | Custom SrcDir     | 默认为src.main.java，如果不是这个路径，比如在src.main.kotlin，请修改 |
-| Source Language   | Java语言需要开发者实现获取ViewModel方法                      |
+| Source Language   | 支持Kotlin、Java语言，Java语言需要开发者实现获取ViewModel方法 |
 
 
 
