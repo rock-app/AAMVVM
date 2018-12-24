@@ -1,6 +1,8 @@
+/**
+ * generate by AAMVVM: https://github.com/HeadingMobile/AAMVVM
+ */
+package ${packageName}.viewmodel
 
-package ${packageName}.viewmodel;
-import javax.inject.Inject
 /**
  * description: ${viewmodelName}
  *
@@ -8,6 +10,6 @@ import javax.inject.Inject
  *
  * @date ${.now?string("yyyy/MM/dd")}
  */
-class ${viewmodelName} @Inject constructor(): BaseViewModel(){
+class ${viewmodelName} constructor(): BaseViewModel(){
     
 }

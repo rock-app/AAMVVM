@@ -1,3 +1,6 @@
+/**
+ * generate by AAMVVM: https://github.com/HeadingMobile/AAMVVM
+ */
 package ${packageName};
 
 import ${superClassFqcn};
@@ -5,7 +8,6 @@ import ${superClassFqcn};
 <#if generateViewModel>
 import ${packageName}.viewmodel.${shortName}ViewModel;
 </#if>  
-
 
 /**
  * description: ${fragmentClass}
@@ -28,10 +30,14 @@ public class ${fragmentClass} extends BaseFragment<${fragmentClass}Binding>{
     @Override 
     public void initView() {
          <#if generateViewModel>
-        mViewModel = getInjectViewModel<${shortName}ViewModel>();
-        mBinding.setVm(mViewModel);
+        //mViewModel = initViewModel();
+        getMBinding.setVm(mViewModel);
         </#if>
     }
 
+    @Override
+    public void loadData(boolean isRefresh) {
+
+    }
 }
 

@@ -1,5 +1,9 @@
+/**
+ * generate by AAMVVM: https://github.com/HeadingMobile/AAMVVM
+ */
 package ${escapeKotlinIdentifiers(packageName)}
 <#if generateViewModel>
+import org.koin.android.viewmodel.ext.android.viewModel
 import ${packageName}.viewmodel.${shortName}ViewModel
 </#if> 
 
@@ -13,7 +17,7 @@ import ${packageName}.viewmodel.${shortName}ViewModel
 class ${fragmentClass} : BaseFragment<${fragmentClass}Binding>(){
 
 	<#if generateViewModel>
-	private val  mViewModel by lazy {getInjectViewModel<${shortName}ViewModel>()}
+	private val  mViewModel by viewModel<${shortName}ViewModel>()
 	</#if>
 
 	override fun getLayoutId(): Int = R.layout.${layoutName}
@@ -22,5 +26,9 @@ class ${fragmentClass} : BaseFragment<${fragmentClass}Binding>(){
          <#if generateViewModel>
         mBinding.vm=mViewModel
         </#if>
+    }
+
+    override fun loadData(isRefresh: Boolean) {
+        
     }
 }

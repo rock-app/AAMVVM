@@ -1,10 +1,12 @@
+/**
+ * generate by AAMVVM: https://github.com/HeadingMobile/AAMVVM
+ */
 package ${packageName};
 
 import ${superClassFqcn};
 <#if generateViewModel>
 import ${packageName}.viewmodel.${shortName}ViewModel;
 </#if>  
-
 
 /**
  * description: ${activityClass}
@@ -30,8 +32,8 @@ public class ${activityClass} extends BaseActivity<${activityClass}Binding>{
     @Override 
     public void initView() {
         <#if generateViewModel>
-        mViewModel = getInjectViewModel<${shortName}ViewModel>();
-        mBinding.setVm(mViewModel);
+        //mViewModel = initViewModel()
+        getMBinding.setVm(mViewModel);
         </#if>
     }
 
